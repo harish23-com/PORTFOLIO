@@ -169,7 +169,6 @@ const ListCrud = ({ title, endpoint, emptyItem, fields, renderTitle, renderSubti
         </Button>
       </div>
 
-      {/* Responsive Edit / Create Modal */}
       <Modal
         isOpen={!!editing}
         onClose={() => setEditing(null)}
@@ -193,7 +192,6 @@ const ListCrud = ({ title, endpoint, emptyItem, fields, renderTitle, renderSubti
         )}
       </Modal>
 
-      {/* Responsive Delete Confirmation Modal */}
       <ConfirmModal
         isOpen={!!deletingId}
         onClose={() => setDeletingId(null)}

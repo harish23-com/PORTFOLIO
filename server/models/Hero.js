@@ -7,6 +7,11 @@ const heroSchema = new mongoose.Schema(
     summary: { type: String, required: true, maxlength: 500 },
     heroImage: { type: String, default: '' },
     resumeFile: { type: String, default: '' },
+    resumeOriginalName: { type: String, default: '' },
+    resumeFileSize: { type: Number, default: 0 },
+    resumeUpdatedAt: { type: Date },
+    resumeData: { type: String, default: '' },
+    resumeContentType: { type: String, default: 'application/pdf' },
     stats: [
       {
         label: { type: String, required: true },

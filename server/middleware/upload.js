@@ -24,8 +24,21 @@ const imageFilter = (req, file, cb) => {
 };
 
 const pdfFilter = (req, file, cb) => {
-  if (file.mimetype === 'application/pdf') return cb(null, true);
-  cb(new Error('Only PDF files are allowed'));
+  const ext = path.extname(file.originalname).toLowerCase();
+  const isPdfExt = ext === '.pdf';
+  const isPdfMime =
+    !file.mimetype ||
+    file.mimetype === 'application/pdf' ||
+    file.mimetype === 'application/x-pdf' ||
+    file.mimetype === 'application/acrobat' ||
+    file.mimetype === 'applications/vnd.pdf' ||
+    file.mimetype === 'text/pdf' ||
+    file.mimetype === 'application/octet-stream';
+
+  if (isPdfExt || isPdfMime) {
+    return cb(null, true);
+  }
+  cb(new Error('Only PDF files are allowed (.pdf)'));
 };
 
 const uploadImage = (subfolder) =>
@@ -36,9 +49,9 @@ const uploadImage = (subfolder) =>
   });
 
 const uploadResume = multer({
-  storage: makeStorage('resume'),
+  storage: multer.memoryStorage(),
   fileFilter: pdfFilter,
-  limits: { fileSize: 10 * 1024 * 1024 },
+  limits: { fileSize: 15 * 1024 * 1024 },
 });
 
 module.exports = { uploadImage, uploadResume };

@@ -109,7 +109,6 @@ export const LogoEmblem = ({
         )}
       </defs>
 
-      {/* Orbit Ring */}
       <circle
         cx="100"
         cy="100"
@@ -121,8 +120,6 @@ export const LogoEmblem = ({
         opacity={isLight ? "0.95" : "0.9"}
       />
 
-
-      {/* First Initial */}
       <text
         x="64"
         y="142"
@@ -138,7 +135,6 @@ export const LogoEmblem = ({
         {firstInitial}
       </text>
 
-      {/* Second Initial */}
       <text
         x="136"
         y="142"
@@ -154,7 +150,6 @@ export const LogoEmblem = ({
         {secondInitial}
       </text>
 
-      {/* Connecting Swoosh */}
       <path
         d="M 38 106 C 58 126, 95 110, 120 90 C 145 70, 168 96, 172 108 C 158 92, 132 82, 108 96 C 80 112, 54 118, 38 106 Z"
         fill={`url(#${swooshId})`}

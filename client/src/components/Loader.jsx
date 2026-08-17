@@ -71,7 +71,6 @@ const Loader = ({ show, name: propName }) => {
           }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* Ambient Background Glow Orbs */}
           <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
             <motion.div
               className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full blur-[100px] opacity-30"
@@ -94,9 +93,7 @@ const Loader = ({ show, name: propName }) => {
           </div>
 
           <div className="relative z-10 flex flex-col items-center gap-6 sm:gap-7">
-            {/* Center Animated Emblem with Dual Orbital Rings */}
             <div className="relative flex items-center justify-center">
-              {/* Outer Counter-Rotating Pulse Ring */}
               <motion.div
                 className="absolute -inset-4 sm:-inset-5 rounded-full border border-dashed"
                 style={{ borderColor: 'rgba(var(--accent-rgb), 0.35)' }}
@@ -104,7 +101,6 @@ const Loader = ({ show, name: propName }) => {
                 transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
               />
 
-              {/* Inner Glowing Orbit Ring */}
               <motion.div
                 className="absolute -inset-2 rounded-full border-2"
                 style={{
@@ -116,7 +112,6 @@ const Loader = ({ show, name: propName }) => {
                 transition={{ repeat: Infinity, duration: 1.6, ease: 'linear' }}
               />
 
-              {/* Dynamic Monogram Logo Emblem with Glow */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -131,7 +126,6 @@ const Loader = ({ show, name: propName }) => {
               </motion.div>
             </div>
 
-            {/* Dynamic Typography */}
             <div className="flex flex-col items-center text-center gap-1.5 px-4">
               <motion.h2
                 className="font-display font-bold text-base sm:text-lg tracking-[0.2em] uppercase"
@@ -153,7 +147,6 @@ const Loader = ({ show, name: propName }) => {
               </motion.p>
             </div>
 
-            {/* Futuristic Slim Shimmer Progress Bar */}
             <div className="w-44 sm:w-56 h-1 rounded-full bg-white/10 overflow-hidden relative border border-white/5">
               <motion.div
                 className="h-full rounded-full"

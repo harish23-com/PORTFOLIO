@@ -71,6 +71,22 @@ const autoSeedIfEmpty = async () => {
 
     if (data.hero) {
       const { _id, createdAt, updatedAt, __v, ...heroData } = data.hero;
+      if (!heroData.resumeData && heroData.resumeFile && !heroData.resumeFile.startsWith('http')) {
+        try {
+          const cleanPath = heroData.resumeFile.replace(/^\/+/, '');
+          const localPdf = path.join(__dirname, '..', cleanPath);
+          if (fs.existsSync(localPdf)) {
+            const buf = fs.readFileSync(localPdf);
+            heroData.resumeData = buf.toString('base64');
+            heroData.resumeOriginalName = heroData.resumeOriginalName || 'Harish_Kumar_Resume.pdf';
+            heroData.resumeFileSize = buf.length;
+            heroData.resumeContentType = 'application/pdf';
+            heroData.resumeFile = '/api/resume/download';
+          }
+        } catch (e) {
+          console.warn('Could not read seed resume into DB:', e.message);
+        }
+      }
       await Hero.create(heroData);
     }
 

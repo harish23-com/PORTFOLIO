@@ -12,6 +12,7 @@ import Education from '../sections/Education';
 import Certificates from '../sections/Certificates';
 import Resume from '../sections/Resume';
 import Contact from '../sections/Contact';
+import { updateFaviconFromSiteName } from '../utils/dynamicFavicon';
 
 const Home = () => {
   const [data, setData] = useState({});
@@ -31,6 +32,10 @@ const Home = () => {
           api.get('/social-links'),
           api.get('/settings'),
         ]);
+
+        if (settings.data.data?.siteName) {
+          updateFaviconFromSiteName(settings.data.data.siteName);
+        }
 
         setData({
           hero: hero.data.data,

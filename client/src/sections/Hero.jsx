@@ -1,19 +1,10 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Download, Send, ArrowDown } from 'lucide-react';
-import api from '../api/axios';
+import { getResumeDownloadUrl } from '../utils/resume';
 
 const Hero = ({ hero }) => {
   if (!hero) return null;
-
-  const handleDownload = async () => {
-    try {
-      await api.post('/resume/track-download');
-    } catch { }
-    if (hero.resumeFile) {
-      window.open(hero.resumeFile, '_blank');
-    }
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
@@ -88,9 +79,15 @@ const Hero = ({ hero }) => {
           transition={{ delay: 0.2, duration: 0.35 }}
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16"
         >
-          <button onClick={handleDownload} className="btn-primary text-sm sm:text-base">
+          <a
+            href={getResumeDownloadUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="btn-primary text-sm sm:text-base inline-flex items-center gap-2"
+          >
             <Download size={16} /> Download Resume
-          </button>
+          </a>
           <a href="#contact" className="btn-outline text-sm sm:text-base">
             <Send size={16} /> Hire Me
           </a>

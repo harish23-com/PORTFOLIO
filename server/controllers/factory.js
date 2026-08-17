@@ -1,7 +1,11 @@
-const singletonController = (Model) => ({
+const singletonController = (Model, options = {}) => ({
   get: async (req, res, next) => {
     try {
-      let doc = await Model.findOne();
+      let query = Model.findOne();
+      if (options.exclude) {
+        query = query.select(options.exclude);
+      }
+      let doc = await query;
       if (!doc) {
         return res.status(200).json({ success: true, data: {} });
       }

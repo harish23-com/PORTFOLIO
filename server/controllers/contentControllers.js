@@ -9,7 +9,7 @@ const Certificate = require('../models/Certificate');
 const SocialLink = require('../models/SocialLink');
 const Settings = require('../models/Settings');
 
-const heroController = singletonController(Hero);
+const heroController = singletonController(Hero, { exclude: '-resumeData' });
 const aboutController = singletonController(About);
 const settingsController = singletonController(Settings);
 

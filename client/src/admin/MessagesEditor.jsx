@@ -65,7 +65,6 @@ const MessagesEditor = () => {
         <p className="text-xs sm:text-sm mt-0.5" style={{ color: 'var(--color-muted)' }}>Read visitor inquiries and send direct email replies</p>
       </div>
 
-      {/* Delete confirmation modal */}
       <ConfirmModal
         isOpen={!!deletingId}
         onClose={() => setDeletingId(null)}
@@ -76,7 +75,6 @@ const MessagesEditor = () => {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 sm:gap-6">
-        {/* Messages List Column */}
         <div className={`lg:col-span-2 space-y-2.5 ${selected ? 'hidden lg:block' : 'block'}`}>
           {loading ? (
             <LoadingCard text="Loading messages..." />
@@ -120,7 +118,6 @@ const MessagesEditor = () => {
           )}
         </div>
 
-        {/* Message Details Column */}
         <div className={`lg:col-span-3 ${selected ? 'block' : 'hidden lg:block'}`}>
           {selected ? (
             <div className="glass rounded-2xl p-4 sm:p-6 border" style={{ borderColor: 'var(--color-border)' }}>

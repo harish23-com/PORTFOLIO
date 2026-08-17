@@ -31,7 +31,6 @@ const SidebarContent = ({ user, handleLogout, onNavClick }) => {
   const { mode, toggleMode } = useTheme();
   return (
     <div className="flex flex-col h-full">
-      {/* Clean, perfectly-aligned Sidebar Header */}
       <div className="p-4 border-b" style={{ borderColor: 'var(--color-border)' }}>
         <div className="flex items-center justify-between gap-2.5">
           <div className="flex items-center gap-2.5 min-w-0 flex-1">
@@ -116,7 +115,6 @@ const DashboardLayout = () => {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Dynamically find active page title from current URL path
   const activeNav = navItems.find((item) =>
     item.end ? location.pathname === item.to : location.pathname.startsWith(item.to)
   );
@@ -137,7 +135,6 @@ const DashboardLayout = () => {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row" style={{ background: 'var(--color-base)', color: 'var(--color-text)' }}>
-      {/* Desktop Fixed Sidebar */}
       <aside
         className="w-64 border-r flex-col hidden lg:flex fixed top-0 bottom-0 left-0 z-30 overflow-y-auto"
         style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)' }}
@@ -145,7 +142,6 @@ const DashboardLayout = () => {
         <SidebarContent user={user} handleLogout={handleLogout} />
       </aside>
 
-      {/* Dynamic Mobile Top Navbar Header */}
       <header
         className="lg:hidden fixed top-0 left-0 right-0 h-16 z-40 flex items-center justify-between px-3.5 sm:px-4 border-b glass"
         style={{ borderColor: 'var(--color-border)' }}
@@ -181,7 +177,6 @@ const DashboardLayout = () => {
         </div>
       </header>
 
-      {/* Mobile Sidebar Drawer */}
       <AnimatePresence>
         {sidebarOpen && (
           <>
@@ -218,7 +213,6 @@ const DashboardLayout = () => {
         )}
       </AnimatePresence>
 
-      {/* Main Content Area */}
       <main className="flex-1 lg:ml-64 pt-20 sm:pt-24 lg:pt-8 p-3.5 sm:p-6 md:p-8 lg:p-10 min-h-screen max-w-full overflow-x-hidden">
         <div className="max-w-6xl mx-auto w-full">
           <Outlet />

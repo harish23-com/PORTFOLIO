@@ -20,7 +20,6 @@ const SettingsEditor = () => {
   const { mode, toggleMode, colorTheme, setColorTheme } = useTheme();
   const { user, updateProfile } = useAuth();
 
-  // Admin Account & Password State
   const [adminName, setAdminName] = useState(user?.name || '');
   const [adminEmail, setAdminEmail] = useState(user?.email || '');
   const [currentPassword, setCurrentPassword] = useState('');
@@ -101,7 +100,6 @@ const SettingsEditor = () => {
         <p className="text-xs sm:text-sm mt-0.5" style={{ color: 'var(--color-muted)' }}>Configure site identity, theme colors, SEO meta tags, and admin credentials</p>
       </div>
 
-      {/* Live Color Theme Customizer */}
       <Card title="Live Color Theme">
         <p className="text-xs sm:text-sm mb-4" style={{ color: 'var(--color-muted)' }}>
           Select the primary accent color palette for your entire portfolio and admin panel.
@@ -155,7 +153,6 @@ const SettingsEditor = () => {
         </div>
       </Card>
 
-      {/* General Brand Settings */}
       <Card title="Brand & Identity">
         <Input
           label="Site Name / Brand Display Name"
@@ -164,7 +161,6 @@ const SettingsEditor = () => {
           onChange={(e) => setForm({ ...form, siteName: e.target.value })}
         />
 
-        {/* Live Logo Preview Box */}
         <div className="space-y-2 p-3 sm:p-4 rounded-xl border" style={{ borderColor: 'var(--color-border)', background: 'var(--color-surface-2)' }}>
           <span className="text-xs font-semibold uppercase tracking-wider block" style={{ color: 'var(--accent2)' }}>
             Live Monogram Emblem Preview
@@ -180,7 +176,6 @@ const SettingsEditor = () => {
         <TextArea label="Footer Text" rows={2} value={form.footerText} onChange={(e) => setForm({ ...form, footerText: e.target.value })} />
       </Card>
 
-      {/* SEO & Metadata */}
       <Card title="SEO & Metadata">
         <Input label="Meta Title" value={form.seo?.metaTitle || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, metaTitle: e.target.value } })} />
         <TextArea label="Meta Description" rows={3} value={form.seo?.metaDescription || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, metaDescription: e.target.value } })} />
@@ -198,7 +193,6 @@ const SettingsEditor = () => {
         </div>
       </Card>
 
-      {/* Admin Account & Security Section at the Bottom */}
       <Card title="Admin Account & Credentials">
         <div className="flex items-center gap-3 p-3.5 rounded-xl border mb-4" style={{ borderColor: 'rgba(var(--accent-rgb), 0.25)', background: 'rgba(var(--accent-rgb), 0.05)' }}>
           <Shield className="text-[var(--accent)] flex-shrink-0" size={20} />
@@ -228,7 +222,6 @@ const SettingsEditor = () => {
             Change Password (Optional)
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            {/* Current Password with Eye toggle */}
             <div>
               <label className="block text-xs font-medium mb-1.5" style={{ color: 'var(--color-muted)' }}>Current Password</label>
               <div className="relative">
@@ -256,7 +249,6 @@ const SettingsEditor = () => {
               </div>
             </div>
 
-            {/* New Password with Eye toggle */}
             <div>
               <label className="block text-xs font-medium mb-1.5" style={{ color: 'var(--color-muted)' }}>New Password</label>
               <div className="relative">
@@ -284,7 +276,6 @@ const SettingsEditor = () => {
               </div>
             </div>
 
-            {/* Confirm New Password with Eye toggle */}
             <div>
               <label className="block text-xs font-medium mb-1.5" style={{ color: 'var(--color-muted)' }}>Confirm New Password</label>
               <div className="relative">

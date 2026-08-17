@@ -27,6 +27,7 @@ import SmtpEditor from './admin/SmtpEditor';
 import SocialLinksEditor from './admin/SocialLinksEditor';
 import SettingsEditor from './admin/SettingsEditor';
 import BackupEditor from './admin/BackupEditor';
+import { updateFaviconFromSiteName } from './utils/dynamicFavicon';
 
 const ToasterWithTheme = () => {
   const { mode } = useTheme();
@@ -50,6 +51,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    updateFaviconFromSiteName('Harish Kumar');
     const timer = setTimeout(() => setLoading(false), 350);
     return () => clearTimeout(timer);
   }, []);
