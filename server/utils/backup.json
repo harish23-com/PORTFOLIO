@@ -1,0 +1,649 @@
+{
+  "exportedAt": "2026-08-17T06:26:35.994Z",
+  "users": [
+    {
+      "_id": "6a698e18b20dbaac2e638197",
+      "name": "Ramanadhapuram Harish Kumar",
+      "email": "ramanadhapuramharishkumar@gmail.com",
+      "role": "admin",
+      "createdAt": "2026-07-29T05:22:32.848Z",
+      "updatedAt": "2026-08-17T05:28:23.336Z",
+      "__v": 0
+    }
+  ],
+  "hero": {
+    "_id": "6a698e19b20dbaac2e63819c",
+    "name": "Ramanadhapuram Harish Kumar",
+    "roles": [
+      "Full Stack Developer",
+      "MERN Stack Developer",
+      "Backend Engineer"
+    ],
+    "summary": "Full Stack Developer (MCA 2026) with hands-on experience building production CRUD applications using Node.js/Express.js, React.js, Django and MySQL. Skilled in designing secure REST APIs with JWT authentication, custom middleware, and Role-Based Access Control for multi-role systems.",
+    "heroImage": "",
+    "resumeFile": "/uploads/resume/1785303122362-532193563.pdf",
+    "stats": [
+      {
+        "label": "Projects Built",
+        "value": "5+",
+        "_id": "6a698e19b20dbaac2e63819d"
+      },
+      {
+        "label": "Months Experience",
+        "value": "6+",
+        "_id": "6a698e19b20dbaac2e63819e"
+      },
+      {
+        "label": "Technologies",
+        "value": "15+",
+        "_id": "6a698e19b20dbaac2e63819f"
+      }
+    ],
+    "createdAt": "2026-07-29T05:22:33.519Z",
+    "updatedAt": "2026-07-29T05:35:02.346Z",
+    "__v": 0
+  },
+  "about": {
+    "personalInfo": {
+      "nationality": "Indian",
+      "email": "ramanadhapuramharishkumar@gmail.com",
+      "phone": "+91 6309499560",
+      "location": "Bengaluru, India"
+    },
+    "_id": "6a698e19b20dbaac2e6381a2",
+    "bio": "I am a Full Stack Developer based in Bengaluru, India, with a Masters in Computer Applications. I specialize in building secure, production-grade CRUD applications using the MERN stack and Django, with a strong focus on authentication, role-based access control, and clean API design. I enjoy solving real-world problems through code and continuously expanding my skill set across the stack.",
+    "image": "",
+    "timeline": [
+      {
+        "year": "2026 - Present",
+        "title": "Full Stack Developer Intern",
+        "description": "BrightNodes Pvt Ltd, Bengaluru — building production CRUD applications with Node.js/Express.js, Django and React.js",
+        "type": "experience",
+        "_id": "6a698e19b20dbaac2e6381a3"
+      },
+      {
+        "year": "2023 - 2025",
+        "title": "MCA",
+        "description": "V.R. Institute of Post Graduate Studies, Nellore",
+        "type": "education",
+        "_id": "6a698e19b20dbaac2e6381a4"
+      },
+      {
+        "year": "2020 - 2023",
+        "title": "B.Sc. Mathematics, Statistics & Computer Science",
+        "description": "Vivekananda Degree College, Nellore",
+        "type": "education",
+        "_id": "6a698e19b20dbaac2e6381a5"
+      }
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "level": "Fluent (written & spoken)",
+        "_id": "6a698e19b20dbaac2e6381a6"
+      },
+      {
+        "name": "Telugu",
+        "level": "Native",
+        "_id": "6a698e19b20dbaac2e6381a7"
+      },
+      {
+        "name": "Tamil",
+        "level": "Conversational",
+        "_id": "6a698e19b20dbaac2e6381a8"
+      }
+    ],
+    "interests": [
+      "Fast Learner",
+      "Adaptable to New Environments",
+      "Analytical Thinking",
+      "Team Collaboration"
+    ],
+    "achievements": [
+      {
+        "title": "Python Course Completion Certificate",
+        "description": "Careerschool IT Solutions (Jul 2025 – Jan 2026)",
+        "_id": "6a698e19b20dbaac2e6381a9"
+      }
+    ],
+    "createdAt": "2026-07-29T05:22:33.553Z",
+    "updatedAt": "2026-07-29T05:22:33.553Z",
+    "__v": 0
+  },
+  "skills": [
+    {
+      "_id": "6a698e19b20dbaac2e6381ac",
+      "category": "Frontend",
+      "name": "React.js",
+      "icon": "",
+      "level": 85,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.572Z",
+      "updatedAt": "2026-07-29T05:22:33.572Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381af",
+      "category": "Backend",
+      "name": "Node.js",
+      "icon": "",
+      "level": 85,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b3",
+      "category": "Database",
+      "name": "MySQL",
+      "icon": "",
+      "level": 85,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b5",
+      "category": "Programming Languages",
+      "name": "JavaScript",
+      "icon": "",
+      "level": 88,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b8",
+      "category": "Authentication",
+      "name": "JWT",
+      "icon": "",
+      "level": 85,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.574Z",
+      "updatedAt": "2026-07-29T05:22:33.574Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381bb",
+      "category": "API Development",
+      "name": "REST APIs",
+      "icon": "",
+      "level": 88,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.574Z",
+      "updatedAt": "2026-07-29T05:22:33.574Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381bd",
+      "category": "Version Control",
+      "name": "Git",
+      "icon": "",
+      "level": 85,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.575Z",
+      "updatedAt": "2026-07-29T05:22:33.575Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381bf",
+      "category": "Tools",
+      "name": "VS Code",
+      "icon": "",
+      "level": 90,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.575Z",
+      "updatedAt": "2026-07-29T05:22:33.575Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381ad",
+      "category": "Frontend",
+      "name": "HTML5",
+      "icon": "",
+      "level": 90,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b0",
+      "category": "Backend",
+      "name": "Express.js",
+      "icon": "",
+      "level": 85,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b4",
+      "category": "Database",
+      "name": "MongoDB",
+      "icon": "",
+      "level": 75,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b6",
+      "category": "Programming Languages",
+      "name": "Python",
+      "icon": "",
+      "level": 80,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.574Z",
+      "updatedAt": "2026-07-29T05:22:33.574Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b9",
+      "category": "Authentication",
+      "name": "bcrypt",
+      "icon": "",
+      "level": 85,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.574Z",
+      "updatedAt": "2026-07-29T05:22:33.574Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381bc",
+      "category": "API Development",
+      "name": "Postman",
+      "icon": "",
+      "level": 80,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.574Z",
+      "updatedAt": "2026-07-29T05:22:33.574Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381be",
+      "category": "Version Control",
+      "name": "GitHub",
+      "icon": "",
+      "level": 85,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.575Z",
+      "updatedAt": "2026-07-29T05:22:33.575Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381c0",
+      "category": "Tools",
+      "name": "Vercel",
+      "icon": "",
+      "level": 75,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.575Z",
+      "updatedAt": "2026-07-29T05:22:33.575Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381ae",
+      "category": "Frontend",
+      "name": "CSS3 (Flexbox/Grid)",
+      "icon": "",
+      "level": 88,
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b1",
+      "category": "Backend",
+      "name": "Django (MVT)",
+      "icon": "",
+      "level": 75,
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:36:46.212Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b7",
+      "category": "Programming Languages",
+      "name": "PHP",
+      "icon": "",
+      "level": 60,
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.574Z",
+      "updatedAt": "2026-07-29T05:22:33.574Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381ba",
+      "category": "Authentication",
+      "name": "RBAC",
+      "icon": "",
+      "level": 80,
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.574Z",
+      "updatedAt": "2026-07-29T05:22:33.574Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381b2",
+      "category": "Backend",
+      "name": "Laravel",
+      "icon": "",
+      "level": 60,
+      "order": 4,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.573Z",
+      "updatedAt": "2026-07-29T05:22:33.573Z"
+    }
+  ],
+  "experience": [
+    {
+      "_id": "6a698e19b20dbaac2e6381c4",
+      "role": "Python Full Stack Developer Intern",
+      "company": "Careerschool IT Solutions",
+      "location": "Remote",
+      "startDate": "Jun-2025",
+      "endDate": "Jan-2026",
+      "description": [
+        "Built Python applications applying OOP principles, file handling and data structures; gained foundational exposure to backend and web development.",
+        "Practised writing modular, reusable, enterprise-standard code."
+      ],
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.602Z",
+      "updatedAt": "2026-08-17T05:31:39.064Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381c3",
+      "role": "Full Stack Developer Intern",
+      "company": "BrightNodes Pvt Ltd",
+      "location": "Bengaluru",
+      "startDate": "Apr 2026",
+      "endDate": "Present",
+      "description": [
+        "Built and maintained multiple production-grade CRUD applications (School Management System, Company Management System) using Node.js/Express.js and Django, with React.js frontends.",
+        "Implemented secure authentication and authorisation using JWT tokens, custom Express middleware, and Role-Based Access Control (RBAC) to manage admin, staff and user-level permissions.",
+        "Designed and optimised MySQL schemas and queries; handled migrations and transaction management in a live production environment.",
+        "Used Git/GitHub for version control and code reviews; collaborated in Agile sprints to ship reliable, scalable features on schedule."
+      ],
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.602Z",
+      "updatedAt": "2026-07-29T05:22:33.602Z"
+    }
+  ],
+  "education": [
+    {
+      "_id": "6a698e19b20dbaac2e6381c8",
+      "degree": "B.Sc. Mathematics, Statistics & Computer Science",
+      "institution": "Vivekananda Degree College, Nellore",
+      "startYear": "2020",
+      "endYear": "2023",
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.612Z",
+      "updatedAt": "2026-07-29T05:22:33.612Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381c7",
+      "degree": "MCA",
+      "institution": "V.R. Institute of Post Graduate Studies, Nellore",
+      "startYear": "2023",
+      "endYear": "2026",
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.611Z",
+      "updatedAt": "2026-07-29T05:34:46.640Z"
+    }
+  ],
+  "projects": [
+    {
+      "_id": "6a698e19b20dbaac2e6381cf",
+      "title": "Yummy — Responsive Restaurant Website",
+      "description": "Fully responsive restaurant website built with Flexbox/Grid layouts and deployed live on Vercel.",
+      "features": [
+        "Responsive menu section",
+        "Gallery",
+        "Contact section optimised for all breakpoints"
+      ],
+      "technologies": [
+        "HTML5",
+        "CSS3"
+      ],
+      "images": [],
+      "liveDemo": "https://yummy-one-alpha.vercel.app",
+      "challenges": "Achieving pixel-perfect responsiveness across mobile, tablet and desktop.",
+      "learnings": "Refined Flexbox/Grid layout skills for real-world responsive design.",
+      "featured": false,
+      "order": 0,
+      "slug": "yummy-responsive-restaurant-website-aqu9c",
+      "createdAt": "2026-07-29T05:22:33.628Z",
+      "updatedAt": "2026-07-29T05:22:33.628Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381ce",
+      "title": "DriveSpend — Banking Statement Analytics System",
+      "description": "A normalised database with 6+ complex queries (JOIN, GROUP BY, CASE WHEN, HAVING, Subquery, RANK()) powering spending and savings-ranking dashboards.",
+      "features": [
+        "Category-wise spending reports",
+        "Savings leaderboard using SQL window functions"
+      ],
+      "technologies": [
+        "MySQL",
+        "SQL"
+      ],
+      "images": [],
+      "challenges": "Writing performant window-function queries over transaction data.",
+      "learnings": "Strengthened advanced SQL skills including RANK() and correlated subqueries.",
+      "featured": false,
+      "order": 1,
+      "slug": "drivespend-banking-statement-analytics-system-mq1gv",
+      "createdAt": "2026-07-29T05:22:33.628Z",
+      "updatedAt": "2026-07-29T05:22:33.628Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381cc",
+      "title": "Company Management System",
+      "description": "CRUD workflows for employee, manager and admin roles with JWT-secured APIs, middleware validation and RBAC permission gating.",
+      "features": [
+        "Employee records management",
+        "Department management",
+        "Approval workflows",
+        "Token-based session handling"
+      ],
+      "technologies": [
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "JWT",
+        "React.js"
+      ],
+      "images": [],
+      "challenges": "Implementing multi-level approval workflows with granular permission gating.",
+      "learnings": "Gained experience structuring protected API endpoints for enterprise-style workflows.",
+      "featured": true,
+      "order": 2,
+      "slug": "company-management-system-p49b3",
+      "createdAt": "2026-07-29T05:22:33.628Z",
+      "updatedAt": "2026-07-29T05:22:33.628Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381cb",
+      "title": "School Management System",
+      "description": "A full CRUD platform for admin/teacher/student roles with JWT authentication, custom auth middleware and RBAC-based access control.",
+      "features": [
+        "Role-based dashboards for admin, teacher and student",
+        "Protected routes based on permissions",
+        "Attendance and class management"
+      ],
+      "technologies": [
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "JWT",
+        "React.js"
+      ],
+      "images": [],
+      "challenges": "Designing a relational schema that cleanly supported students, teachers, classes and attendance across multiple roles.",
+      "learnings": "Deepened understanding of RBAC design patterns and middleware-based route protection.",
+      "featured": true,
+      "order": 3,
+      "slug": "school-management-system-gcv74",
+      "createdAt": "2026-07-29T05:22:33.627Z",
+      "updatedAt": "2026-07-29T05:22:33.627Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381cd",
+      "title": "MelodyMind — Intelligent Music System Using NLP",
+      "description": "An AI-powered, voice-controlled music player with NLP pipelines mapping natural language commands to song/playlist actions on a Django MVC backend.",
+      "features": [
+        "Voice-controlled playback",
+        "NLP command parsing",
+        "Playlist management"
+      ],
+      "technologies": [
+        "Python",
+        "Django",
+        "NLTK/spaCy",
+        "JavaScript",
+        "SQLite"
+      ],
+      "images": [],
+      "challenges": "Mapping varied natural language commands reliably to specific playback actions.",
+      "learnings": "Hands-on experience integrating NLP pipelines with a traditional MVC web backend.",
+      "featured": true,
+      "order": 4,
+      "slug": "melodymind-intelligent-music-system-using-nlp-jglac",
+      "createdAt": "2026-07-29T05:22:33.628Z",
+      "updatedAt": "2026-07-29T05:22:33.628Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a829e074274625bb11fee55",
+      "title": "Personal Portfolio Website",
+      "description": "A full-stack MERN portfolio application with an admin dashboard, dynamic content management, dark/light theme switching, responsive design, and SEO optimization.",
+      "features": [
+        "Admin dashboard with full CRUD for all sections,",
+        "Dark / Light mode with 4 color theme presets,",
+        "Fully responsive across all screen sizes,",
+        "Contact form with SMTP email delivery,",
+        "JWT-based authentication for admin panel,",
+        "SEO meta tags management,",
+        "Analytics visit tracking"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Tailwind CSS",
+        "Framer Motion",
+        "JWT Auth"
+      ],
+      "images": [],
+      "liveDemo": "",
+      "github": "",
+      "challenges": "Building a flexible content management system that keeps the public portfolio fast while the admin panel remains feature-rich.",
+      "learnings": "Deep dive into MERN stack best practices, JWT refresh token flows, Tailwind CSS variable theming, and Framer Motion animations.",
+      "featured": true,
+      "order": 5,
+      "slug": "personal-portfolio-website-7x0pf",
+      "createdAt": "2026-08-17T05:37:11.273Z",
+      "updatedAt": "2026-08-17T05:39:00.503Z",
+      "__v": 0
+    }
+  ],
+  "certificates": [],
+  "socialLinks": [
+    {
+      "_id": "6a698e19b20dbaac2e6381d6",
+      "platform": "GitHub",
+      "url": "https://github.com/harish23-com",
+      "icon": "",
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.642Z",
+      "updatedAt": "2026-07-29T05:33:54.586Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381d7",
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/harishkumar-dev/",
+      "icon": "",
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.642Z",
+      "updatedAt": "2026-07-29T05:34:06.393Z"
+    },
+    {
+      "_id": "6a698e19b20dbaac2e6381d8",
+      "platform": "Email",
+      "url": "mailto:ramanadhapuramharishkumar@gmail.com",
+      "icon": "",
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-07-29T05:22:33.642Z",
+      "updatedAt": "2026-07-29T05:22:33.642Z"
+    }
+  ],
+  "settings": {
+    "seo": {
+      "metaTitle": "Ramanadhapuram Harish Kumar | Full Stack Developer",
+      "metaDescription": "Full Stack Developer specializing in the MERN stack, Django and MySQL. Building secure, production-grade web applications.",
+      "keywords": "Full Stack Developer, MERN Stack, React, Node.js, Express, MongoDB, Django, Bengaluru",
+      "robots": "index, follow",
+      "canonicalUrl": "",
+      "ogImage": "",
+      "twitterHandle": ""
+    },
+    "_id": "6a698e19b20dbaac2e6381db",
+    "siteName": "Harish Kumar | Portfolio",
+    "logo": "",
+    "favicon": "",
+    "footerText": "© 2026 Ramanadhapuram Harish Kumar. All rights reserved.",
+    "resumeDownloadsCount": 13,
+    "visitorCount": 104,
+    "createdAt": "2026-07-29T05:22:33.654Z",
+    "updatedAt": "2026-08-17T06:14:07.244Z",
+    "__v": 0
+  },
+  "contacts": [
+    {
+      "_id": "6a69930e2cc066800dc99b2c",
+      "name": "harish",
+      "email": "harishramanadhapuram123@gmail.com",
+      "phone": "",
+      "subject": "for hiring the software intern",
+      "message": "hi my self harish im an hr in brd pvt ltd if you intrest to join us please send the confirmation",
+      "isRead": true,
+      "replied": true,
+      "createdAt": "2026-07-29T05:43:42.804Z",
+      "updatedAt": "2026-07-29T07:08:07.297Z",
+      "__v": 0
+    }
+  ],
+  "smtpConfig": {
+    "_id": "6a69905e1d535d24df9002ce",
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "username": "ramanadhapuramharishkumar@gmail.com",
+    "password": "e2f33b24faad83cccc3be4b05501453c912090bccb28762d9e59ad445e2a3582",
+    "senderName": "",
+    "senderEmail": "",
+    "notifyEmail": "",
+    "createdAt": "2026-07-29T05:32:15.000Z",
+    "updatedAt": "2026-07-29T05:48:47.528Z",
+    "__v": 0
+  }
+}
