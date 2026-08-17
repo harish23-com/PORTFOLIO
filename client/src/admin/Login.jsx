@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Lock, Mail, Loader2, Sun, Moon } from 'lucide-react';
+import { Lock, Mail, Loader2, Sun, Moon, Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
@@ -10,6 +10,7 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const { mode, toggleMode } = useTheme();
 
@@ -33,7 +34,7 @@ const Login = () => {
     border: '1px solid var(--input-border)',
     borderRadius: '0.75rem',
     paddingLeft: '2.75rem',
-    paddingRight: '1rem',
+    paddingRight: '2.75rem',
     paddingTop: '0.75rem',
     paddingBottom: '0.75rem',
     fontSize: '0.875rem',
@@ -85,7 +86,7 @@ const Login = () => {
             <input
               type="email"
               required
-              placeholder="Email"
+              placeholder="Email / Username"
               style={inputStyle}
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -96,7 +97,7 @@ const Login = () => {
           <div className="relative">
             <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: 'var(--color-muted)' }} />
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               required
               placeholder="Password"
               style={inputStyle}
@@ -105,6 +106,15 @@ const Login = () => {
               onFocus={(e) => { e.target.style.borderColor = 'rgba(var(--accent-rgb),0.6)'; }}
               onBlur={(e) => { e.target.style.borderColor = 'var(--input-border)'; }}
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 rounded-md transition-colors"
+              style={{ color: 'var(--color-muted)' }}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+            >
+              {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+            </button>
           </div>
         </div>
 

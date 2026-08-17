@@ -8,7 +8,7 @@ import {
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { AnimatePresence, motion } from 'framer-motion';
-import Logo, { LogoEmblem } from '../components/Logo';
+import { LogoEmblem } from '../components/Logo';
 
 const navItems = [
   { to: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard', end: true },
@@ -31,18 +31,29 @@ const SidebarContent = ({ user, handleLogout, onNavClick }) => {
   const { mode, toggleMode } = useTheme();
   return (
     <div className="flex flex-col h-full">
-      <div className="p-4 sm:p-5 border-b flex items-center justify-between" style={{ borderColor: 'var(--color-border)' }}>
-        <div className="min-w-0 pr-2">
-          <Logo siteName={user?.name || 'Admin'} subtitle="ADMIN" size={26} />
+      {/* Clean, perfectly-aligned Sidebar Header */}
+      <div className="p-4 border-b" style={{ borderColor: 'var(--color-border)' }}>
+        <div className="flex items-center justify-between gap-2.5">
+          <div className="flex items-center gap-2.5 min-w-0 flex-1">
+            <LogoEmblem size={28} />
+            <div className="min-w-0 flex-1">
+              <p className="font-bold text-xs sm:text-sm gradient-text tracking-wide truncate">
+                Admin Panel
+              </p>
+              <p className="text-[10px] uppercase tracking-wider font-semibold opacity-70 truncate" style={{ color: 'var(--color-muted)' }}>
+                {user?.name ? user.name.split(' ').slice(0, 2).join(' ') : 'Dashboard'}
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={toggleMode}
+            aria-label="Toggle theme"
+            className="w-8 h-8 rounded-xl glass flex items-center justify-center flex-shrink-0 transition-transform active:scale-95"
+            style={{ color: 'var(--color-text)' }}
+          >
+            {mode === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+          </button>
         </div>
-        <button
-          onClick={toggleMode}
-          aria-label="Toggle theme"
-          className="w-8 h-8 rounded-full glass flex items-center justify-center flex-shrink-0 transition-all"
-          style={{ color: 'var(--color-text)' }}
-        >
-          {mode === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
-        </button>
       </div>
 
       <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
@@ -207,7 +218,7 @@ const DashboardLayout = () => {
         )}
       </AnimatePresence>
 
-      {/* Main Content Area with generous top spacing on mobile */}
+      {/* Main Content Area */}
       <main className="flex-1 lg:ml-64 pt-20 sm:pt-24 lg:pt-8 p-3.5 sm:p-6 md:p-8 lg:p-10 min-h-screen max-w-full overflow-x-hidden">
         <div className="max-w-6xl mx-auto w-full">
           <Outlet />

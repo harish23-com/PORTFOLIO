@@ -99,4 +99,56 @@ const changePassword = async (req, res, next) => {
   }
 };
 
-module.exports = { login, refresh, logout, getMe, changePassword };
+const updateProfile = async (req, res, next) => {
+  try {
+    const { name, email, currentPassword, newPassword } = req.body;
+    const user = await User.findById(req.user._id).select('+password');
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User account not found' });
+    }
+
+    if (name) user.name = name.trim();
+    if (email) user.email = email.trim().toLowerCase();
+
+    if (newPassword) {
+      if (!currentPassword) {
+        return res.status(400).json({
+          success: false,
+          message: 'Please provide your current password to set a new password',
+        });
+      }
+      if (!(await user.matchPassword(currentPassword))) {
+        return res.status(401).json({
+          success: false,
+          message: 'Current password is incorrect',
+        });
+      }
+      if (newPassword.length < 8) {
+        return res.status(400).json({
+          success: false,
+          message: 'New password must be at least 8 characters long',
+        });
+      }
+      user.password = newPassword;
+    }
+
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: 'Admin account credentials updated successfully',
+      user: { id: user._id, name: user.name, email: user.email, role: user.role },
+    });
+  } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({
+        success: false,
+        message: 'This email is already associated with another account',
+      });
+    }
+    next(error);
+  }
+};
+
+module.exports = { login, refresh, logout, getMe, changePassword, updateProfile };
