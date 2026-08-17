@@ -62,9 +62,20 @@ app.use('/api/contact', contactLimiter);
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+const autoSeedIfEmpty = require('./utils/autoSeed');
+
 app.use(async (req, res, next) => {
-  await connectDB();
-  next();
+  try {
+    await connectDB();
+    await autoSeedIfEmpty();
+    next();
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: 'Database connection failed: ' + err.message,
+      hint: 'Please check your MONGO_URI environment variable and verify MongoDB Atlas Network Access allows IP 0.0.0.0/0',
+    });
+  }
 });
 
 app.use('/api/auth', require('./routes/auth'));

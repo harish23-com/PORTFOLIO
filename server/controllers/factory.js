@@ -2,7 +2,9 @@ const singletonController = (Model) => ({
   get: async (req, res, next) => {
     try {
       let doc = await Model.findOne();
-      if (!doc) doc = await Model.create({});
+      if (!doc) {
+        return res.status(200).json({ success: true, data: {} });
+      }
       res.status(200).json({ success: true, data: doc });
     } catch (error) {
       next(error);
