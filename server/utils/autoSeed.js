@@ -11,26 +11,42 @@ const Certificate = require('../models/Certificate');
 const SocialLink = require('../models/SocialLink');
 const Settings = require('../models/Settings');
 
-let seeded = false;
+let isSeeding = false;
+let seedComplete = false;
 
 const autoSeedIfEmpty = async () => {
-  if (seeded) return;
+  if (seedComplete || isSeeding) return;
+  isSeeding = true;
 
   try {
     const heroCount = await Hero.countDocuments();
     if (heroCount > 0) {
-      seeded = true;
+      seedComplete = true;
+      isSeeding = false;
       return;
     }
 
     const backupPath = path.join(__dirname, 'backup.json');
     if (!fs.existsSync(backupPath)) {
-      seeded = true;
+      seedComplete = true;
+      isSeeding = false;
       return;
     }
 
     const raw = fs.readFileSync(backupPath, 'utf-8');
     const data = JSON.parse(raw);
+
+    await Promise.all([
+      Hero.deleteMany({}),
+      About.deleteMany({}),
+      Skill.deleteMany({}),
+      Experience.deleteMany({}),
+      Education.deleteMany({}),
+      Project.deleteMany({}),
+      Certificate.deleteMany({}),
+      SocialLink.deleteMany({}),
+      Settings.deleteMany({}),
+    ]);
 
     const userCount = await User.countDocuments();
     if (userCount === 0) {
@@ -98,10 +114,12 @@ const autoSeedIfEmpty = async () => {
       await Settings.create(settingsData);
     }
 
-    seeded = true;
-    console.log('Database automatically seeded from backup.json on server start');
+    seedComplete = true;
+    console.log('Database seeded cleanly from backup.json');
   } catch (err) {
     console.error('Auto seed notice:', err.message);
+  } finally {
+    isSeeding = false;
   }
 };
 
