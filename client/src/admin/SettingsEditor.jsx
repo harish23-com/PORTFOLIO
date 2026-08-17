@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Save, Palette, Check } from 'lucide-react';
+import { Save, Palette, Check, Sun, Moon } from 'lucide-react';
 import api from '../api/axios';
-import { Card, Input, TextArea, Button } from './ui';
+import { Card, Input, TextArea, Button, LoadingCard } from './ui';
 import { useTheme, COLOR_THEMES } from '../context/ThemeContext';
 import Logo from '../components/Logo';
 
@@ -16,22 +16,29 @@ const hexToRgb = (hex) => {
 const SettingsEditor = () => {
   const [form, setForm] = useState(null);
   const [saving, setSaving] = useState(false);
-  const { colorTheme, setColorTheme, mode, toggleMode } = useTheme();
+  const { mode, toggleMode, colorTheme, setColorTheme } = useTheme();
 
   useEffect(() => {
     api.get('/settings').then((res) => setForm(res.data.data));
   }, []);
 
-  if (!form) return <p style={{ color: 'var(--color-muted)' }}>Loading...</p>;
+  if (!form) {
+    return <LoadingCard text="Loading Site & SEO Settings..." />;
+  }
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
+    e?.preventDefault();
     setSaving(true);
     try {
-      const { data } = await api.put('/settings', form);
+      const payload = {
+        ...form,
+        colorTheme,
+      };
+      const { data } = await api.put('/settings', payload);
       setForm(data.data);
-      toast.success('Settings updated');
+      toast.success('Settings updated successfully');
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Failed to update');
+      toast.error(err.response?.data?.message || 'Failed to update settings');
     } finally {
       setSaving(false);
     }
@@ -39,72 +46,76 @@ const SettingsEditor = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text)' }}>
-        Site & SEO Settings
-      </h1>
+      <div className="mb-5 sm:mb-6">
+        <h1 className="text-xl sm:text-2xl font-bold" style={{ color: 'var(--color-text)' }}>Site & SEO Settings</h1>
+        <p className="text-xs sm:text-sm mt-0.5" style={{ color: 'var(--color-muted)' }}>Customize themes, branding, search metadata, and contact details</p>
+      </div>
 
-      <Card title="Theme & Appearance">
+      <Card title="Appearance & Themes">
         <div className="mb-6">
-          <p className="text-xs mb-3" style={{ color: 'var(--color-muted)' }}>Display Mode</p>
-          <div className="flex items-center gap-3">
+          <p className="text-xs mb-3 font-medium" style={{ color: 'var(--color-muted)' }}>Default Mode</p>
+          <div className="flex flex-wrap gap-3">
             <button
+              type="button"
               onClick={() => mode !== 'dark' && toggleMode()}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border transition-all ${
-                mode === 'dark' ? 'text-white' : 'text-[var(--color-muted)] hover:text-[var(--color-text)]'
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm transition-all ${
+                mode === 'dark' ? 'border-accent text-white' : 'border-white/10 text-muted'
               }`}
-              style={
-                mode === 'dark'
-                  ? { background: 'linear-gradient(135deg, rgba(var(--accent-rgb),0.25), rgba(var(--accent2-rgb),0.15))', borderColor: 'rgba(var(--accent-rgb),0.4)' }
-                  : { background: 'var(--glass-bg)', borderColor: 'var(--color-border)' }
-              }
+              style={{
+                borderColor: mode === 'dark' ? 'var(--accent)' : 'var(--color-border)',
+                background: mode === 'dark' ? 'rgba(var(--accent-rgb), 0.12)' : 'var(--glass-bg)',
+                color: mode === 'dark' ? 'var(--color-text)' : 'var(--color-muted)',
+              }}
             >
-              <span>🌙</span> Dark Mode
-              {mode === 'dark' && <Check size={14} className="ml-1" />}
+              <Moon size={15} /> Dark Mode
             </button>
             <button
+              type="button"
               onClick={() => mode !== 'light' && toggleMode()}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border transition-all ${
-                mode === 'light' ? 'text-[var(--color-text)]' : 'text-[var(--color-muted)] hover:text-[var(--color-text)]'
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm transition-all ${
+                mode === 'light' ? 'border-accent' : 'border-white/10'
               }`}
-              style={
-                mode === 'light'
-                  ? { background: 'linear-gradient(135deg, rgba(var(--accent-rgb),0.15), rgba(var(--accent2-rgb),0.1))', borderColor: 'rgba(var(--accent-rgb),0.4)' }
-                  : { background: 'var(--glass-bg)', borderColor: 'var(--color-border)' }
-              }
+              style={{
+                borderColor: mode === 'light' ? 'var(--accent)' : 'var(--color-border)',
+                background: mode === 'light' ? 'rgba(var(--accent-rgb), 0.12)' : 'var(--glass-bg)',
+                color: mode === 'light' ? 'var(--color-text)' : 'var(--color-muted)',
+              }}
             >
-              <span>☀️</span> Light Mode
-              {mode === 'light' && <Check size={14} className="ml-1" />}
+              <Sun size={15} /> Light Mode
             </button>
           </div>
         </div>
 
         <div>
-          <p className="text-xs mb-3 flex items-center gap-1.5" style={{ color: 'var(--color-muted)' }}>
-            <Palette size={13} /> Color Theme
+          <p className="text-xs mb-3 flex items-center gap-1.5 font-medium" style={{ color: 'var(--color-muted)' }}>
+            <Palette size={13} /> Color Palette Preset
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-3">
             {COLOR_THEMES.map((theme) => (
               <button
                 key={theme.id}
+                type="button"
                 onClick={() => setColorTheme(theme.id)}
-                className="relative flex flex-col items-center gap-2 p-4 rounded-2xl border transition-all"
+                className="relative flex flex-col items-center gap-2 p-3 sm:p-4 rounded-2xl border transition-all"
                 style={{
                   borderColor: colorTheme === theme.id ? theme.accent : 'var(--color-border)',
-                  background: colorTheme === theme.id ? `rgba(${hexToRgb(theme.accent)}, 0.1)` : 'var(--glass-bg)',
+                  background: colorTheme === theme.id ? `rgba(${hexToRgb(theme.accent)}, 0.12)` : 'var(--glass-bg)',
                 }}
               >
                 <div className="flex gap-1.5">
-                  <span className="w-5 h-5 rounded-full" style={{ background: theme.accent }} />
-                  <span className="w-5 h-5 rounded-full" style={{ background: theme.accent2 }} />
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full shadow-sm" style={{ background: theme.accent }} />
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full shadow-sm" style={{ background: theme.accent2 }} />
                 </div>
-                <p className="text-xs font-medium" style={{ color: 'var(--color-text)' }}>{theme.name}</p>
+                <p className="text-xs font-medium truncate w-full text-center" style={{ color: 'var(--color-text)' }}>
+                  {theme.name}
+                </p>
                 <div
                   className="w-full h-1 rounded-full"
                   style={{ background: `linear-gradient(90deg, ${theme.accent}, ${theme.accent2})` }}
                 />
                 {colorTheme === theme.id && (
                   <span
-                    className="absolute top-2 right-2 w-4 h-4 rounded-full flex items-center justify-center"
+                    className="absolute top-2 right-2 w-4 h-4 rounded-full flex items-center justify-center shadow"
                     style={{ background: theme.accent }}
                   >
                     <Check size={10} color="#fff" />
@@ -119,33 +130,41 @@ const SettingsEditor = () => {
       <Card title="General & Branding">
         <Input label="Site Name / Brand Name" value={form.siteName} onChange={(e) => setForm({ ...form, siteName: e.target.value })} />
 
-        <div className="my-4 p-5 rounded-2xl glass flex flex-col items-center justify-center gap-4 text-center" style={{ borderColor: 'var(--color-border)' }}>
-          <p className="text-xs font-semibold tracking-wider uppercase text-[var(--accent2)]">
+        {/* Live Logo Preview Box - Responsive & Centered */}
+        <div
+          className="my-4 p-4 sm:p-6 rounded-2xl glass flex flex-col items-center justify-center gap-3 text-center border"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <span className="text-[11px] font-bold tracking-widest uppercase" style={{ color: 'var(--accent2)' }}>
             Live Dynamic Logo Preview
-          </p>
-          <div className="p-4 rounded-xl border border-white/5 bg-black/20">
-            <Logo siteName={form.siteName} variant="badge" size={44} />
+          </span>
+          <div className="w-full flex items-center justify-center py-6 px-4 rounded-xl border border-white/5 bg-black/10">
+            <Logo siteName={form.siteName} variant="badge" size={80} />
           </div>
-          <p className="text-xs" style={{ color: 'var(--color-muted)' }}>
-            The initials and text update automatically based on the Site Name entered above.
+          <p className="text-[11px]" style={{ color: 'var(--color-muted)' }}>
+            The initials and styling update automatically in real-time based on the name above.
           </p>
         </div>
 
         <TextArea label="Footer Text" rows={2} value={form.footerText} onChange={(e) => setForm({ ...form, footerText: e.target.value })} />
       </Card>
 
-      <Card title="SEO">
+      <Card title="SEO & Metadata">
         <Input label="Meta Title" value={form.seo?.metaTitle || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, metaTitle: e.target.value } })} />
         <TextArea label="Meta Description" rows={3} value={form.seo?.metaDescription || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, metaDescription: e.target.value } })} />
-        <Input label="Keywords (comma separated)" value={form.seo?.keywords || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, keywords: e.target.value } })} />
-        <Input label="Robots" value={form.seo?.robots || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, robots: e.target.value } })} />
-        <Input label="Canonical URL" value={form.seo?.canonicalUrl || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, canonicalUrl: e.target.value } })} />
-        <Input label="Twitter Handle" value={form.seo?.twitterHandle || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, twitterHandle: e.target.value } })} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <Input label="Keywords (comma separated)" value={form.seo?.keywords || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, keywords: e.target.value } })} />
+          <Input label="Robots" value={form.seo?.robots || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, robots: e.target.value } })} />
+          <Input label="Canonical URL" value={form.seo?.canonicalUrl || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, canonicalUrl: e.target.value } })} />
+          <Input label="Twitter Handle" value={form.seo?.twitterHandle || ''} onChange={(e) => setForm({ ...form, seo: { ...form.seo, twitterHandle: e.target.value } })} />
+        </div>
       </Card>
 
-      <Button onClick={handleSave} disabled={saving}>
-        <Save size={16} /> {saving ? 'Saving...' : 'Save Settings'}
-      </Button>
+      <div className="mt-6">
+        <Button onClick={handleSave} disabled={saving} className="w-full sm:w-auto">
+          <Save size={16} /> {saving ? 'Saving...' : 'Save All Settings'}
+        </Button>
+      </div>
     </div>
   );
 };
