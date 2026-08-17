@@ -38,9 +38,9 @@ const Hero = ({ hero }) => {
 
       <div className="section-container relative z-10 text-center w-full">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-sm font-medium tracking-[0.3em] uppercase mb-4 sm:mb-6"
           style={{ color: 'var(--accent2)' }}
         >
@@ -48,9 +48,9 @@ const Hero = ({ hero }) => {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.7 }}
+          transition={{ delay: 0.05, duration: 0.35 }}
           className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
           style={{ color: 'var(--color-text)' }}
         >
@@ -58,9 +58,9 @@ const Hero = ({ hero }) => {
         </motion.h1>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          transition={{ delay: 0.1, duration: 0.35 }}
           className="text-lg sm:text-xl md:text-2xl font-medium mb-6 sm:mb-8 h-8 sm:h-10"
           style={{ color: 'var(--color-muted)' }}
         >
@@ -73,9 +73,9 @@ const Hero = ({ hero }) => {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.65, duration: 0.6 }}
+          transition={{ delay: 0.15, duration: 0.35 }}
           className="max-w-xl sm:max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base px-2"
           style={{ color: 'var(--color-muted)' }}
         >
@@ -83,9 +83,9 @@ const Hero = ({ hero }) => {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
+          transition={{ delay: 0.2, duration: 0.35 }}
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16"
         >
           <button onClick={handleDownload} className="btn-primary text-sm sm:text-base">
@@ -98,9 +98,9 @@ const Hero = ({ hero }) => {
 
         {hero.stats?.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.95, duration: 0.6 }}
+            transition={{ delay: 0.25, duration: 0.35 }}
             className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-16"
           >
             {hero.stats.map((stat) => (
