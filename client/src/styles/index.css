@@ -166,6 +166,13 @@ h5 {
   box-shadow: var(--shadow-card);
 }
 
+[data-theme="light"] .btn-outline {
+  color: #1a1a2e !important;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
 .btn-outline:hover {
   transform: scale(1.05);
   border-color: var(--accent);
